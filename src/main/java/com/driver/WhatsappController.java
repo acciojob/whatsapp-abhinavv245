@@ -23,7 +23,7 @@ public class WhatsappController {
     WhatsappService whatsappService = new WhatsappService();
 
     @PostMapping("/add-user")
-    public String createUser(String name, String mobile) throws Exception {
+    public String createUser(String name,String mobile) throws Exception {
         //If the mobile number exists in database, throw "User already exists" exception
         //Otherwise, create the user and return "SUCCESS"
 
@@ -53,7 +53,7 @@ public class WhatsappController {
     }
 
     @PutMapping("/send-message")
-    public int sendMessage(Message message, User sender, Group group) throws Exception{
+    public int sendMessage(Message message,User sender,Group group) throws Exception{
         //Throw "Group does not exist" if the mentioned group does not exist
         //Throw "You are not allowed to send message" if the sender is not a member of the group
         //If the message is sent successfully, return the final number of messages in that group.
